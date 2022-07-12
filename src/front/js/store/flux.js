@@ -28,6 +28,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (token && token != "" && token != undefined ) setStore({ token: token });
 			},
 
+			logout: () => {
+				sessionStorage.removeItem("token");
+				console.log("login out");
+				setStore({ token: null });
+			},
+
 			login: async (email, password) => {
 				const opts = {
 					method: 'POST',
@@ -41,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 		
 				try{
-					const resp = await fetch("https://3001-jesstechpreneur-final3-4gopdkqz99q.ws-us53.gitpod.io/api/token", opts)
+					const resp = await fetch("https://3001-jesstechpreneur-final3-ppxcipbj4xs.ws-us53.gitpod.io/api/token", opts)
 					if (resp.status !== 200){
 						alert("There has been some error");
 						return false;
@@ -57,17 +63,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			getMessage: async () => {
-				try{
+			getMessage: () => {
+				const store = getStore();
+				const opts = {
+					headers: {
+						Authorization: "Bearer" + store.token
+					}
+				};
+				
 					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const data = await resp.json()
-					setStore({ message: data.message })
-					// don't forget to return something, that is how the async resolves
-					return data;
-				}catch(error){
-					console.log("Error loading message from backend", error)
-				}
+					fetch("https://3001-jesstechpreneur-final3-ppxcipbj4xs.ws-us53.gitpod.io/api/hello", opts)
+					.then(resp => resp.json()) 
+					.then(data => setStore({ message: data.message }))
+					.catch(error => console.log("Error loading message from backend", error));
+					
 			},
 			changeColor: (index, color) => {
 				//get the store

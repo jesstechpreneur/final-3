@@ -2,21 +2,22 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-//import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password , setPassword] = useState("");
-	//const history = useHistory();
+
+	const history = useNavigate();
+
 	console.log("This is your token", store.token);
 	const handleClick = () => {
-		actions.login(email, password).then(() => {
-			history.pushState("/")
-		})
+		actions.login(email, password);
+		history("/", { replace: true })
 	};
 
-	//if (store.token && store.token != "" && store.token != undefined ) //history.push("/")
+	//if (store.token && store.token != "" && store.token != undefined ) //history.push("/home");
 	
 	return (
 		<div className="text-center mt-5">
