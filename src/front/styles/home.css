@@ -5,3 +5,29 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+form#loginForm{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+div#bottomFormInputs{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+div.header{
+    padding-right: 5px;
+}
+input#email{
+    width:100%;
+}
+input#password{
+    width:100%;
+}
+input#confirmationPassword{
+    width:100%;
+}
+#leftSideQuote{
+    padding-right: 10%;
+}
