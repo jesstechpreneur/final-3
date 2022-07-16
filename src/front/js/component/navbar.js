@@ -9,16 +9,16 @@ export const Navbar = () => {
 		<nav className="navbar">
 
 			<Link to="/">
-				<icon className="fa-solid fa-circle" style={{ marginLeft: "25px", color:"black", }}></icon>
+				<i className="fa-solid fa-circle" style={{ marginLeft: "25px", color:"black", }}></i>
 			</Link>
 			<div className="ml-auto">
 				<Link to="/">
 					<button className="btn">Home</button>
 				</Link>
-				<Link to="/login">
+				<Link to="/shop.js">
 					<button className="btn">Shop</button>
 				</Link>
-				<Link to="/login">
+				<Link to="/checkout.js">
 					<button className="btn">Checkout</button>
 				</Link>
 				{/* {!store.token ?

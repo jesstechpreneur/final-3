@@ -7,22 +7,51 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
-		if(store.token && store.token != "" && store.token != undefined) actions.getMessage();
+		if (store.token && store.token != "" && store.token != undefined) actions.getMessage();
 	}, [store.token]);
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">{store.message}</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
+		<div style={{ paddingTop:"20%", display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent: 'spaceBetween' }}>
+			<div id="leftSideQuote" className="text-center">
+				<h1>Order Fresh Meals To Your Doorstep</h1>
+			</div>
+			<div className="" style={{ border: "3px solid lightgray", padding: "25px" }}>
+				<form className="loginForm">
+					<div className="text-center" id="header">
+						<header><strong>Sign up for a free account</strong></header>
+					</div>
+					<br></br>
+					<div id="formInputs">
+						<div id="topFormInputs">
+							<label>
+								<input id="firstName" placeholder="First Name" type="firstName"></input>
+							</label>
+							<label>
+								<input id="LastName" placeholder="Last Name" type="firstName"></input>
+							</label>
+						</div>
+						<br></br>
+						<div id="bottomFormInputs">
+							<label>
+								<input id="email" placeholder="Email Address" type="email"></input>
+							</label>
+							<br></br>
+							<label>
+								<input id="password" placeholder="Password" type="password"></input>
+							</label>
+							<br></br>
+							<label>
+								<input id="confirmationPassword" placeholder="Confirm Password" type="confirmationPassword"></input>
+							</label>
+						</div>
+						<br></br>
+						<div id="formButton">
+							<button className="btn btn-primary" type="submit" onClick={()=>{actions.login}}>Register</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
 		</div>
 	);
 };
