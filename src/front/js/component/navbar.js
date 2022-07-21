@@ -9,13 +9,13 @@ export const Navbar = () => {
 		<nav className="navbar">
 
 			<Link to="/">
-				<i className="fa-solid fa-circle" style={{ marginLeft: "25px", color:"black", }}></i>
+				<i className="fa-solid fa-circle" style={{ marginLeft: "25px", color: "black", }}></i>
 			</Link>
 			<div className="ml-auto">
 				<Link to="/">
 					<button className="btn">Home</button>
 				</Link>
-				<Link to="/shop.js">
+				<Link to="/shop">
 					<button className="btn">Shop</button>
 				</Link>
 				<Link to="/checkout.js">
