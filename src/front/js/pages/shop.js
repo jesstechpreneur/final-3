@@ -7,6 +7,7 @@ export function Shop() {
   useEffect(() => {
     getShop();
   }, []);
+
   const getShop = async () => {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${process.env.RECIPE_APP_API_KEY}&number=9`
@@ -17,9 +18,10 @@ export function Shop() {
 
   return (
     <div>
+      <h3>Select Recipe</h3>
       {Shop.map((recipe) => {
         return (
-          <div key={recipe.key}>
+          <div key={recipe.id}>
             <p>{recipe.title}</p>
           </div>
         );
