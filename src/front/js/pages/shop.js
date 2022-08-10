@@ -10,7 +10,7 @@ export function Shop() {
 
   const getShop = async () => {
     const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.RECIPE_APP_API_KEY}&number=9`
+      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.RECIPE_APP}&number=9`
     );
     const data = await api.json();
     setShop(data.recipes);
