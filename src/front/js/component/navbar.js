@@ -18,16 +18,9 @@ export const Navbar = () => {
 				<Link to="/shop">
 					<button className="btn">Shop</button>
 				</Link>
-				<Link to="/checkout.js">
+				<Link to = "/checkout">
 					<button className="btn">Checkout</button>
 				</Link>
-				{/* {!store.token ?
-						<Link to="/login">
-							<button className="btn">log in</button>
-						</Link> : 
-						<button onClick={() => actions.logout()} className="btn btn-primary">log out</button>
-					} */}
-
 			</div>
 
 		</nav>

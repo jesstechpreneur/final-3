@@ -1,0 +1,38 @@
+.checkoutContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+.recipeOption{
+    margin-bottom: 5em;
+    margin-top: 5%;
+    border: .09rem solid black; 
+    height: 40vh;
+    width: 80vw;
+    display:flex ;
+    align-items: center;
+    flex-direction: column;
+}
+.recipePhoto{
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    height:11em;
+    width: 16em;
+    background-color: rgba(171, 173, 176, 0.571);
+}
+.recipeDetails{
+    display: flex;
+    border-top:none;
+    border-left : 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    height: 11em;
+    width: 16em;
+}
+/* -------------------------------------------- */
+

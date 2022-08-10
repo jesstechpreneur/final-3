@@ -15,7 +15,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			]
-			
 
 		},
 		actions: {
