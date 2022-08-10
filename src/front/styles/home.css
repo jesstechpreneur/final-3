@@ -31,3 +31,11 @@ input#confirmationPassword{
 #leftSideQuote{
     padding-right: 10%;
 }
+.signUpContainer{
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    
+}

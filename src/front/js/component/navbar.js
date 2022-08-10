@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/navbar.css";
-
+import myImage from "../../img/1.png"
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar">
-
+			
 			<Link to="/">
-				<i className="fa-solid fa-circle" style={{ marginLeft: "25px", color: "black", }}></i>
+				<img id="navbarLogo" src={myImage}></img>
 			</Link>
 			<div className="ml-auto">
 				<Link to="/">

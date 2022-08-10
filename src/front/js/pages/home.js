@@ -10,11 +10,11 @@ export const Home = () => {
 	}, [store.token]);
 
 	return (
-		<div style={{ paddingTop:"20%", display: 'flex', justifyContent: 'center', alignItems: 'center',alignContent: 'spaceBetween' }}>
+		<div className="signUpContainer" >
 			<div id="leftSideQuote" className="text-center">
 				<h1>Order Fresh Meals To Your Doorstep</h1>
 			</div>
-			<div className="" style={{ border: "3px solid lightgray", padding: "25px" }}>
+			<div className="homeSignUpForm" style={{ border: "3px solid lightgray", padding: "25px" }}>
 				<form className="loginForm">
 					<div className="text-center" id="header">
 						<header><strong>Sign up for a free account</strong></header>
