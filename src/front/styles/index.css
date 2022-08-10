@@ -1,3 +1,13 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+.card {
+  width: 18rem;
+  display: inline-block;
+  padding: 10px;
+}
+.btn-green {
+  background-color: #2c7929;
+  color: white;
+  font-weight: bold;
+}
