@@ -21,8 +21,19 @@ export function Shop() {
       <h3>Select Recipe</h3>
       {Shop.map((recipe) => {
         return (
-          <div key={recipe.id}>
-            <p>{recipe.title}</p>
+          <div key={recipe.id} className="card">
+            <img
+              className="card-img-top"
+              src={recipe.imageUrl}
+              alt={recipe.title}
+            ></img>
+            <div className="card-body">
+              <h5 className="card-title">{recipe.title}</h5>
+              <p className="card-text">{recipe.servings}</p>
+              <a href="/cart" class="btn btn-green">
+                Add to cart
+              </a>
+            </div>
           </div>
         );
       })}
