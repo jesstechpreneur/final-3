@@ -17,26 +17,32 @@ export function Shop() {
   };
 
   return (
-    <div>
-      <h3>Select Recipe</h3>
-      {Shop.map((recipe) => {
-        return (
-          <div key={recipe.id} className="card">
-            <img
-              className="card-img-top"
-              src={recipe.imageUrl}
-              alt={recipe.title}
-            ></img>
-            <div className="card-body">
-              <h5 className="card-title">{recipe.title}</h5>
-              <p className="card-text">{recipe.servings}</p>
-              <a href="/cart" class="btn btn-green">
-                Add to cart
-              </a>
-            </div>
-          </div>
-        );
-      })}
+    <div className="album py-5">
+      <h3>Select Recipes</h3>
+      <div className="container">
+        <div className="row">
+          {Shop.map((recipe) => {
+            return (
+              <div className="col-md-4 " key={recipe.id}>
+                <div className="card mb-4 box-shadow">
+                  <img
+                    className="card-img-top"
+                    src="https://spoonacular.com/recipeImages/{recipe.id}-480x360.jpg"
+                    alt={recipe.title}
+                  ></img>
+                  <div className="card-body">
+                    <h5 className="card-title">{recipe.title}</h5>
+                    <p className="card-text">{recipe.author}</p>
+                    <a href="/cart" className="btn btn-green">
+                      Add to Favorites
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ export const Checkout = () => {
         <div className="checkoutContainer">
             <div className="recipeOptions">
                 <div className="recipeOption">
-                    <h3> Option </h3> 
+                    <h3> Saved Favorites</h3> 
                     <div className="recipePhoto">Image Photo</div>
                     <div className="recipeDetails">Details</div>
                 </div>
