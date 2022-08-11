@@ -11,8 +11,8 @@ export const Navbar = () => {
         <img id="navbarLogo" src={myImage}></img>
       </Link>
       <div className="ml-auto">
-        <Link to="/">
-          <button className="btn">Home</button>
+        <Link to="/login">
+          <button className="btn">Login</button>
         </Link>
         <Link to="/shop">
           <button className="btn">Favorites</button>

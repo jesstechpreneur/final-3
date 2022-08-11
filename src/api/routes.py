@@ -25,7 +25,7 @@ def create_token():
 
 @api.route("checkout", methods=["GET"])
     
-    return (jsonify({"msg":"checked out"}))
+   
 
 @api.route("/hello", methods=['GET'])
 @jwt_required()

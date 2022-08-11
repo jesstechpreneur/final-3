@@ -10,47 +10,6 @@ export const Home = () => {
 	}, [store.token]);
 
 	return (
-		<div className="signUpContainer" >
-			<div id="leftSideQuote" className="text-center">
-				<h1>Order Fresh Meals To Your Doorstep</h1>
-			</div>
-			<div className="homeSignUpForm" style={{ border: "3px solid lightgray", padding: "25px" }}>
-				<form className="loginForm">
-					<div className="text-center" id="header">
-						<header><strong>Sign up for a free account</strong></header>
-					</div>
-					<br></br>
-					<div id="formInputs">
-						<div id="topFormInputs">
-							<label>
-								<input id="firstName" placeholder="First Name" type="firstName"></input>
-							</label>
-							<label>
-								<input id="LastName" placeholder="Last Name" type="firstName"></input>
-							</label>
-						</div>
-						<br></br>
-						<div id="bottomFormInputs">
-							<label>
-								<input id="email" placeholder="Email Address" type="email"></input>
-							</label>
-							<br></br>
-							<label>
-								<input id="password" placeholder="Password" type="password"></input>
-							</label>
-							<br></br>
-							<label>
-								<input id="confirmationPassword" placeholder="Confirm Password" type="confirmationPassword"></input>
-							</label>
-						</div>
-						<br></br>
-						<div id="formButton">
-							<button className="btn btn-primary" type="submit" onClick={()=>{actions.login}}>Register</button>
-						</div>
-					</div>
-
-				</form>
-			</div>
-		</div>
+		console.log("this is home")
 	);
 };
