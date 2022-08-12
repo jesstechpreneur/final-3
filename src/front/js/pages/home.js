@@ -11,5 +11,6 @@ export const Home = () => {
 
 	return (
 		console.log("this is home")
+		
 	);
 };
