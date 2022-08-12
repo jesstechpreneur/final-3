@@ -23,6 +23,7 @@ export const Login = () => {
 
   //if (store.token && store.token != "" && store.token != undefined ) //history.push("/home");
 
+
   return (
     <div className="signUpContainer">
       <div id="leftSideQuote" className="text-center">
@@ -80,4 +81,5 @@ export const Login = () => {
       </div>
     </div>
   );
+
 };

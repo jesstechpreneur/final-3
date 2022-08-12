@@ -1,75 +1,36 @@
-import React from "react";
-import "../../styles/checkout.css";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export const Checkout = () => {
-    return(
-        <div className="checkoutContainer">
-            <div className="recipeOptions">
-                <div className="recipeOption">
-                    <h3> Saved Favorites</h3> 
-                    <div className="recipePhoto">Image Photo</div>
-                    <div className="recipeDetails">Details</div>
-                </div>
-            </div>
-            {/* <div className="cardInfoForm"><div class="wrapper">
-    <div class="container">
-        <form action="">
-            <h1>
-                <i class="fas fa-shipping-fast"></i>
-                Shipping Details
-            </h1>
-            <div class="name">
-                <div>
-                    <label for="f-name">First</label>
-                    <input type="text" name="f-name"/>
-                </div>
-                <div>
-                    <label for="l-name">Last</label>
-                    <input type="text" name="l-name"/>
-                </div>
-            </div>
-            <div class="street">
-                <label for="name">Street</label>
-                <input type="text" name="address"/>
-            </div>
-            <div class="address-info">
-                <div>
-                    <label for="city">City</label>
-                    <input type="text" name="city"/>
-                </div>
-                <div>
-                    <label for="state">State</label>
-                    <input type="text" name="state"/>
-                </div>
-                <div>
-                    <label for="zip">Zip</label>
-                    <input type="text" name="zip"/>
-                </div>
-            </div>
-            <h1>
-                <i class="far fa-credit-card"></i> Payment Information
-            </h1>
-            <div class="cc-num">
-                <label for="card-num">Credit Card No.</label>
-                <input type="text" name="card-num"/>
-            </div>
-            <div class="cc-info">
-                <div>
-                    <label for="card-num">Exp</label>
-                    <input type="text" name="expire"/>
-                </div>
-                <div>
-                    <label for="card-num">CCV</label>
-                    <input type="text" name="security"/>
-                </div>
-            </div>
-            <div class="btns">
-                <button>Purchase</button>
-                <button>Back to cart</button>
-            </div>
-        </form>
-    </div>
-</div></div> */}
+export function Recipe() {
+  let params = useParams();
+
+  const [details, setDetails] = useState({});
+
+  const fetchDetails = async () => {
+    const data = await fetch(
+      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${process.env.RECIPE_APP}`
+    );
+    const detailData = await data.json();
+    setDetails(detailData);
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, [params.id]);
+
+  return (
+    <div>
+      <div className="container recipe">
+        <div className="row">
+          <div className="col-md-12">
+            <h3>{details.title}</h3>
+            <img src={details.image} />
+            <p>Cuisine: {details.servings} Servings</p>
+            <p>Ready in: {details.readyInMinutes} minutes</p>
+            <p> Course Type: {details.vegan}</p>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
