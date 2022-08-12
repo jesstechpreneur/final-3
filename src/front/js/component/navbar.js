@@ -21,7 +21,7 @@ export const Navbar = () => {
             Logout
           </button>
         )}
-        <Link to="/shop">
+        <Link to="/favorites">
           <button className="btn">Favorites</button>
         </Link>
         <Link to="/checkout">

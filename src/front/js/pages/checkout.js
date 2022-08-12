@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 export function Recipe() {
   let params = useParams();
+
+  const { store, actions } = useContext(Context);
 
   const [details, setDetails] = useState({});
 
@@ -28,6 +32,8 @@ export function Recipe() {
             <p>Cuisine: {details.servings} Servings</p>
             <p>Ready in: {details.readyInMinutes} minutes</p>
             <p> Course Type: {details.vegan}</p>
+            <button onClick={() => actions.addToFavorites(details)}><i class="fa-solid fa-heart"></i></button>
+
           </div>
         </div>
       </div>

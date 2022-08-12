@@ -23,7 +23,7 @@ def create_token():
     return jsonify(access_token=access_token)
 
 
-@api.route("checkout", methods=["GET"])
+
     
    
 

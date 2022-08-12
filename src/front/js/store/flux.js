@@ -1,4 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
+
+  let backendURL = process.env.BACKEND_URL
   return {
     store: {
       token: undefined,
@@ -15,6 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
+      favorites: []
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -29,6 +32,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         if (token && token != "" && token != undefined)
           setStore({ token: token });
+      },
+
+      addToFavorites: (recipe) => {
+        const store = getStore();
+        store.favorites.push(recipe);
+        setStore(store);
       },
 
       logout: () => {
@@ -51,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const resp = await fetch(
-            "https://3001-jesstechpreneur-final3-0tdgmbhfrtb.ws-us60.gitpod.io/api/token",
+            `${backendURL}/api/token`,
             opts
           );
           if (resp.status !== 200) {
@@ -78,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         // fetching data from the backend
         fetch(
-          "https://3001-jesstechpreneur-final3-0tdgmbhfrtb.ws-us60.gitpod.io/api/hello",
+          `${backendURL}/api/hello`,
           opts
         )
           .then((resp) => resp.json())
