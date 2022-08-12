@@ -29,7 +29,7 @@ export const Login = () => {
 			<div className="homeSignUpForm" style={{ border: "3px solid lightgray", padding: "25px" }}>
 				<form className="loginForm">
 					<div className="text-center" id="header">
-						<header><strong>Sign up for a free account</strong></header>
+						<header><strong>Sign up for a Free Account</strong></header>
 					</div>
 					<br></br>
 					<div id="formInputs">
@@ -51,7 +51,7 @@ export const Login = () => {
 						)}
 						<br></br>
 						<div id="formButton">
-							<button className="btn btn-primary" type="submit" onClick={handleClick}>Login</button>
+							<button className="btn btn-orange btn-block" type="submit" onClick={handleClick}>Login</button>
 						</div>
 					</div>
 				</form>
