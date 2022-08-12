@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext} from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export function Shop() {
   const [Shop, setShop] = useState([]);
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
     getShop();
   }, []);
+
+  useEffect(() => {
+		if (store.token && store.token != "" && store.token != undefined) actions.getMessage();
+	}, [store.token]);
 
   const getShop = async () => {
     const api = await fetch(
@@ -46,7 +52,7 @@ export function Shop() {
             );
           })}
         </div>
-      </div>
+      </div> 
     </div>
   );
 }
