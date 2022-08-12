@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-
 export function Recipe() {
   let params = useParams();
 
@@ -26,14 +25,22 @@ export function Recipe() {
     <div>
       <div className="container recipe">
         <div className="row">
-          <div className="col-md-12">
+          <div className="card col">
             <h3>{details.title}</h3>
             <img src={details.image} />
-            <p>Cuisine: {details.servings} Servings</p>
-            <p>Ready in: {details.readyInMinutes} minutes</p>
-            <p> Course Type: {details.vegan}</p>
-            <button onClick={() => actions.addToFavorites(details)}><i class="fa-solid fa-heart"></i></button>
-
+            <div className="row mx-auto text-center">
+              <div className="col">
+                <p>Cuisine: {details.servings} Servings</p>
+                <p>Ready in: {details.readyInMinutes} minutes</p>
+                <p> Course Type: {details.vegan}</p>
+              </div>
+              <a
+                onClick={() => actions.addToFavorites(details)}
+                className="col"
+              >
+                <i class="fa-solid fa-heart"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>

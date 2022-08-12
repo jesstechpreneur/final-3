@@ -42,12 +42,14 @@ export function Shop() {
                     <h5 className="card-title">{recipe.title}</h5>
                     <p className="card-text">Cusine: {recipe.cuisines}</p>
                     <p className="card-text">Ready in: {recipe.readyInMinutes} minutes</p>
-                    <Link to={'/checkout/' + recipe.id}>
-                      <a className="btn btn-green">
-                        View Recipe
-                      </a>
-                    </Link>
-                    <button onClick={() => actions.addToFavorites(recipe)}><i class="fa-solid fa-heart"></i></button>
+                    <div className="navbar bg-white">
+                      <Link to={'/checkout/' + recipe.id}>
+                        <a className="btn btn-green">
+                          View Recipe
+                        </a>
+                      </Link>
+                      <a onClick={() => actions.addToFavorites(recipe)}><i class="fa-solid fa-heart bd-danger"></i></a>
+                    </div>
                   </div>
                 </div>
 
