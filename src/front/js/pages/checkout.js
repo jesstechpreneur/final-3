@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../../styles/checkout.css";
 
 export function Recipe() {
   let params = useParams();
 
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState({});
 
   const fetchDetails = async () => {
     const data = await fetch(
@@ -17,15 +16,19 @@ export function Recipe() {
 
   useEffect(() => {
     fetchDetails();
-  }, [params.name]);
+  }, [params.id]);
 
   return (
-    <div className="checkoutContainer">
-      <div className="recipeOptions">
-        <div className="recipeOption">
-          <h3>{details.title}</h3>
-          <div className="recipePhoto">image</div>
-          <div className="recipeDetails"></div>
+    <div>
+      <div className="container recipe">
+        <div className="row">
+          <div className="col-md-12">
+            <h3>{details.title}</h3>
+            <img src={details.image} />
+            <p>Cuisine: {details.servings} Servings</p>
+            <p>Ready in: {details.readyInMinutes} minutes</p>
+            <p> Course Type: {details.vegan}</p>
+          </div>
         </div>
       </div>
     </div>

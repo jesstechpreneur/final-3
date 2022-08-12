@@ -37,7 +37,7 @@ export function Shop() {
                       <p className="card-text">Cusine: {recipe.cuisines}</p>
                       <p className="card-text">Ready in: {recipe.readyInMinutes} minutes</p>
                       <a href="/cart" className="btn btn-green">
-                        Add to Favorites
+                        View Recipe
                       </a>
                     </div>
                   </div>

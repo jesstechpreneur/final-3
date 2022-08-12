@@ -65,4 +65,18 @@
   background-color:#fea82f;
   font-weight:bold;
 }
+.recipe{
+  margin:auto;
+  padding-top:20px;
+  width:50%;
+  background:#2c7929;
 
+}
+.recipe h3{
+  text-align:center;
+}
+.recipe img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
